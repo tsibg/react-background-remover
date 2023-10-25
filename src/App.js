@@ -11,8 +11,13 @@ function calculateSecondsBetweenDates(startDate, endDate) {
 
 function App() {
   const images = [
-    'https://images.unsplash.com/photo-1686002359940-6a51b0d64f68?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1024&q=80',
-    'https://images.unsplash.com/photo-1590523278191-995cbcda646b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9'
+    'test_images/document.png',
+    'test_images/employee.png',
+    'test_images/gaming.png',
+    'test_images/home.png',
+    'test_images/settings.png',
+    'test_images/settings2.png',
+    'test_images/user.png',
   ];
   const randomImage = images[Math.floor(Math.random() * images.length)];
   const [imageUrl, setImageUrl] = useState(randomImage);
@@ -51,7 +56,12 @@ function App() {
     setImageUrl(randomImage);
 
     const imageBlob = await removeBackground(randomImage, {
-      publicPath: `${window.location.href}/static/js/`,
+      //For demo purposes don't use the local path
+      // Note: If public path is not specified the model and wasm part
+      //   will be loaded from the unpkg CDN
+      // THIS IS SLOW!
+      //
+      // publicPath: `${window.location.href}/static/js/`,
       // debug: true,
       progress: (key, current, total) => {
         const [type, subtype] = key.split(':');

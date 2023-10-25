@@ -1,6 +1,5 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-
 import removeBackground from '@imgly/background-removal';
 
 function calculateSecondsBetweenDates(startDate, endDate) {
@@ -8,19 +7,23 @@ function calculateSecondsBetweenDates(startDate, endDate) {
   const seconds = (milliseconds / 1000.0).toFixed(1);
   return seconds;
 }
+const fullURL = process.env.PUBLIC_URL || window.location.href;
+function getRandomImage() {
+  const images = [
+    fullURL + '/test_images/document.png',
+    fullURL + '/test_images/employee.png',
+    fullURL + '/test_images/gaming.png',
+    fullURL + '/test_images/home.png',
+    fullURL + '/test_images/settings.png',
+    fullURL + '/test_images/settings2.png',
+    fullURL + '/test_images/user.png',
+  ];
+  return images[Math.floor(Math.random() * images.length)];
+}
 
 function App() {
-  const images = [
-    'test_images/document.png',
-    'test_images/employee.png',
-    'test_images/gaming.png',
-    'test_images/home.png',
-    'test_images/settings.png',
-    'test_images/settings2.png',
-    'test_images/user.png',
-  ];
-  const randomImage = images[Math.floor(Math.random() * images.length)];
-  const [imageUrl, setImageUrl] = useState(randomImage);
+ 
+  const [imageUrl, setImageUrl] = useState(getRandomImage());
   const [isRunning, setIsRunning] = useState(false);
   const [seconds, setSeconds] = useState(0);
   const [startDate, setStartDate] = useState(Date.now());
@@ -50,12 +53,12 @@ function App() {
     setIsRunning(false);
   };
 
+
   async function load() {
     setIsRunning(true);
     resetTimer();
-    setImageUrl(randomImage);
-
-    const imageBlob = await removeBackground(randomImage, {
+    console.log("Removing background of image: " + imageUrl);
+    const imageBlob = await removeBackground(imageUrl, {
       //For demo purposes don't use the local path
       // Note: If public path is not specified the model and wasm part
       //   will be loaded from the unpkg CDN

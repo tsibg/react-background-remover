@@ -2,10 +2,10 @@
 
 Standalone React app from the examples of [@imgly/background_remover](https://github.com/imgly/background-removal-js), modified to work outside the mono-repo by using the lib from [NPM](https://www.npmjs.com/package/@imgly/background-removal).
 
-Note: Currently, uses the models and webm assets from UNPKG, which is SLOW.
+Update: The static assets for the background removal are now served from `/public/static/model` as this improves load times.
 
-ToDo:
-- Server assets locally to improve speed
+
+LIVE Preview: https://react-background-remover-seven.vercel.app/
 
 ## Setup
 1. Install dependencies

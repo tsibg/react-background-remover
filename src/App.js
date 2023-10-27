@@ -8,7 +8,7 @@ function calculateSecondsBetweenDates(startDate, endDate) {
   return seconds;
 }
 const FULL_URL = process.env.PUBLIC_URL || window.location.href.slice(0,-1);
-
+const MODEL_ASSETS_URL = FULL_URL + '/static/model/';
 function getRandomImage() {
   const images = [
     FULL_URL + '/test_images/document.png',
@@ -65,7 +65,7 @@ function App() {
       //   will be loaded from the unpkg CDN
       // THIS IS SLOW!
       //
-      // publicPath: `${FULL_URL}/static/js/`,
+      publicPath: MODEL_ASSETS_URL,
       debug: true,
       progress: (key, current, total) => {
         const [type, subtype] = key.split(':');

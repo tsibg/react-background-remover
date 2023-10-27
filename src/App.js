@@ -7,22 +7,22 @@ function calculateSecondsBetweenDates(startDate, endDate) {
   const seconds = (milliseconds / 1000.0).toFixed(1);
   return seconds;
 }
-const fullURL = process.env.PUBLIC_URL || window.location.href;
+const FULL_URL = process.env.PUBLIC_URL || window.location.href.slice(0,-1);
+
 function getRandomImage() {
   const images = [
-    fullURL + '/test_images/document.png',
-    fullURL + '/test_images/employee.png',
-    fullURL + '/test_images/gaming.png',
-    fullURL + '/test_images/home.png',
-    fullURL + '/test_images/settings.png',
-    fullURL + '/test_images/settings2.png',
-    fullURL + '/test_images/user.png',
+    FULL_URL + '/test_images/document.png',
+    FULL_URL + '/test_images/employee.png',
+    FULL_URL + '/test_images/gaming.png',
+    FULL_URL + '/test_images/home.png',
+    FULL_URL + '/test_images/settings.png',
+    FULL_URL + '/test_images/settings2.png',
+    FULL_URL + '/test_images/user.png',
   ];
   return images[Math.floor(Math.random() * images.length)];
 }
 
 function App() {
- 
   const [imageUrl, setImageUrl] = useState(getRandomImage());
   const [isRunning, setIsRunning] = useState(false);
   const [seconds, setSeconds] = useState(0);
@@ -59,12 +59,13 @@ function App() {
     resetTimer();
     console.log("Removing background of image: " + imageUrl);
     const imageBlob = await removeBackground(imageUrl, {
-      //For demo purposes don't use the local path
+      //For demo purposes use the remote assets
+      //
       // Note: If public path is not specified the model and wasm part
       //   will be loaded from the unpkg CDN
       // THIS IS SLOW!
       //
-      // publicPath: `${window.location.href}/static/js/`,
+      // publicPath: `${FULL_URL}/static/js/`,
       // debug: true,
       progress: (key, current, total) => {
         const [type, subtype] = key.split(':');

@@ -2,12 +2,15 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import removeBackground from '@imgly/background-removal';
 
+import ImageInput from './components/ImageInput';
+import ImagePreview from './components/ImagePreview';
+
 function calculateSecondsBetweenDates(startDate, endDate) {
   const milliseconds = endDate - startDate;
   const seconds = (milliseconds / 1000.0).toFixed(1);
   return seconds;
 }
-const FULL_URL = process.env.PUBLIC_URL || window.location.href.slice(0,-1);
+const FULL_URL = process.env.PUBLIC_URL || window.location.href.slice(0, -1);
 const MODEL_ASSETS_URL = FULL_URL + '/static/model/';
 function getRandomImage() {
   const images = [
@@ -23,11 +26,12 @@ function getRandomImage() {
 }
 
 function App() {
-  const [imageUrl, setImageUrl] = useState(getRandomImage());
+  // getRandomImage()
+  const [imageFile, setImageFile] = useState();
   const [isRunning, setIsRunning] = useState(false);
   const [seconds, setSeconds] = useState(0);
   const [startDate, setStartDate] = useState(Date.now());
-  const [caption, setCaption] = useState('Click me to remove background');
+  const [caption, setCaption] = useState("");
 
   useEffect(() => {
     let interval = null;
@@ -57,8 +61,8 @@ function App() {
   async function load() {
     setIsRunning(true);
     resetTimer();
-    console.log("Removing background of image: " + imageUrl);
-    const imageBlob = await removeBackground(imageUrl, {
+    console.log("Removing background of image: " + imageFile);
+    const imageBlob = await removeBackground(imageFile, {
       publicPath: MODEL_ASSETS_URL,
       debug: true,
       progress: (key, current, total) => {
@@ -69,9 +73,7 @@ function App() {
       }
     });
 
-    const url = URL.createObjectURL(imageBlob);
-
-    setImageUrl(url);
+    setImageFile(imageBlob);
     setIsRunning(false);
     stopTimer();
   }
@@ -79,13 +81,21 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={imageUrl} className="App-logo" alt="logo" />
+        <h1>Background Remover Demo</h1>
         <p>{caption}</p>
-        <p>Testing background removal: {seconds} s</p>
-        <button disabled={isRunning} onClick={() => load()}>
-          Click me
-        </button>
+        <p>{seconds ? seconds + "s" : ""}</p>
       </header>
+      <main>
+        <ImageInput onChange={setImageFile} />
+        <ImagePreview fileBlob={imageFile} />
+        <div className='start'>
+
+          <button className='start-button' disabled={isRunning || !imageFile} onClick={() => load()}>
+            Start
+          </button>
+        </div>
+
+      </main>
     </div>
   );
 }

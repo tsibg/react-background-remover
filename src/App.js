@@ -66,7 +66,7 @@ function App() {
       // THIS IS SLOW!
       //
       // publicPath: `${FULL_URL}/static/js/`,
-      // debug: true,
+      debug: true,
       progress: (key, current, total) => {
         const [type, subtype] = key.split(':');
         setCaption(

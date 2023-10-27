@@ -1,6 +1,8 @@
 # React Background Remover
 
-Standalone React app from the examples of [@imgly/background_remover](https://github.com/imgly/background-removal-js), modified to work outside the mono-repo by using the lib from [NPM](https://www.npmjs.com/package/@imgly/background-removal).
+Removes background of the provided image.
+
+React app for testing the Background Remover [@imgly/background_remover](https://github.com/imgly/background-removal-js)
 
 Update: The static assets for the background removal are now served from `/public/static/model` as this improves load times.
 

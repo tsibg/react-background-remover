@@ -59,12 +59,6 @@ function App() {
     resetTimer();
     console.log("Removing background of image: " + imageUrl);
     const imageBlob = await removeBackground(imageUrl, {
-      //For demo purposes use the remote assets
-      //
-      // Note: If public path is not specified the model and wasm part
-      //   will be loaded from the unpkg CDN
-      // THIS IS SLOW!
-      //
       publicPath: MODEL_ASSETS_URL,
       debug: true,
       progress: (key, current, total) => {

@@ -1,5 +1,7 @@
 import './App.css';
 import { useState, useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/react';
+
 import removeBackground from '@imgly/background-removal';
 
 import ImageInput from './components/ImageInput';
@@ -96,6 +98,7 @@ function App() {
         </div>
 
       </main>
+      <Analytics />
     </div>
   );
 }

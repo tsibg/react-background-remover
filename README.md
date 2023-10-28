@@ -2,7 +2,7 @@
 
 Removes background of the provided image.
 
-React app for testing the Background Remover [@imgly/background_remover](https://github.com/imgly/background-removal-js)
+React app for testing the Background Remover library [@imgly/background_remover](https://github.com/imgly/background-removal-js)
 
 Update: The static assets for the background removal are now served from `/public/static/model` as this improves load times.
 

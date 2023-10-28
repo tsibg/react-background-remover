@@ -66,7 +66,7 @@ function App() {
     console.log("Removing background of image: " + imageFile);
     const imageBlob = await removeBackground(imageFile, {
       publicPath: MODEL_ASSETS_URL,
-      debug: true,
+      // debug: true,
       progress: (key, current, total) => {
         const [type, subtype] = key.split(':');
         setCaption(
@@ -84,16 +84,25 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Background Remover Demo</h1>
-        <p>{caption}</p>
-        <p>{seconds ? seconds + "s" : ""}</p>
       </header>
       <main>
         <ImageInput onChange={setImageFile} />
         <ImagePreview fileBlob={imageFile} />
         <div className='start'>
+          <p className='caption'>{caption}</p>
 
           <button className='start-button' disabled={isRunning || !imageFile} onClick={() => load()}>
-            Start
+            <span className='button-icon'>
+              <svg width="48" height="24" viewBox="0 0 24 24" fill="#ffffff" stroke="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-play">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+            </span>
+            <span className='button-text'>
+              Start
+            </span>
+            <span className='button-caption'>
+              {seconds}s
+            </span>
           </button>
         </div>
 

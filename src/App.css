@@ -40,15 +40,56 @@ main {
   padding: 1rem;
 }
 
+
+.image-preview {
+  padding: 0.5rem;
+}
+.image-preview img {
+  width: 80vw;
+  height: auto;
+  max-width: 100%;
+  max-height: 55vh;
+  object-fit: contain;
+}
+.start {
+  font-size: 1rem;
+  color: var(--text-color-light);
+}
 .start-button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 60vw;
+  margin: 1rem auto;
   background-color: var(--primary-color);
   color: var(--text-color);
   border: none;
   border-radius: 50px;
-  padding: 1.5rem 10rem;
+  padding: 0.5rem;
   font-size: 1.5rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  justify-content: space-between;
+  align-items: center;
+}
+.start-button .button-icon {
+  display: flex;
+}
+.start-button .button-icon svg {
+  fill: var(--text-color);
+} 
+.start-button:disabled .button-icon svg {
+  fill: var(--text-color-light);
+} 
+
+.start-button .button-caption {
+  padding: 0.5rem 0.5rem;
+  width: 2.5rem;
+  line-height: 2.5rem;
+
+  font-size: 1.1rem;
+  background-color: var(--primary-color);
+  border-radius: 50%;
 }
 .start-button:not(:disabled):hover {
   box-shadow: 0 2px 10px 0 var(--primary-color);
@@ -57,16 +98,6 @@ main {
   background-color: transparent;
   border: 2px solid var(--text-color-light);
   color: var(--text-color-light);
-}
-.image-preview {
-  padding: 0.5rem;
-}
-.image-preview img {
-  width: 80vw;
-  height: auto;
-  max-width: 100%;
-  max-height: 50vh;
-  object-fit: contain;
 }
 
 @media (prefers-reduced-motion: no-preference) {}
@@ -96,13 +127,16 @@ svg.icon:hover {
   transition: all 0.3s ease;
   cursor: pointer;
   display: flex;
+  height: 40vh;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   transition: all 0.3s ease;
 }
 
 .drop-zone.selected {
   border-width: 1px;
+  height: auto;
   padding: 1rem;
   gap: 1rem;
   flex-direction: row;

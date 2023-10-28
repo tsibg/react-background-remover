@@ -4,16 +4,20 @@ Removes background of the provided image.
 
 React app for testing the Background Remover library [@imgly/background_remover](https://github.com/imgly/background-removal-js)
 
-Update: The static assets for the background removal are now served from `/public/static/model` as this improves load times.
-
+The static assets for the lib are now served from `/public/static/model` as this may improve loading time.
 
 LIVE Preview: https://react-background-remover-seven.vercel.app/
 
+ToDo Notes:
+
+1. Refactor the App Component - extract the processing part to be reusable.
+2. Cleanup of styles
+
 ## Setup
-1. Install dependencies
+1. Install dependencies. The assets will be automatically copied into `/public/static/model`
 `npm install`
 2. Start dev server
-`npm start`
+`npm run start`
 
 ## Learn More
 

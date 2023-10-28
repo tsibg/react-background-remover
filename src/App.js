@@ -14,21 +14,8 @@ function calculateSecondsBetweenDates(startDate, endDate) {
 }
 const FULL_URL = process.env.PUBLIC_URL || window.location.href.slice(0, -1);
 const MODEL_ASSETS_URL = FULL_URL + '/static/model/';
-function getRandomImage() {
-  const images = [
-    FULL_URL + '/test_images/document.png',
-    FULL_URL + '/test_images/employee.png',
-    FULL_URL + '/test_images/gaming.png',
-    FULL_URL + '/test_images/home.png',
-    FULL_URL + '/test_images/settings.png',
-    FULL_URL + '/test_images/settings2.png',
-    FULL_URL + '/test_images/user.png',
-  ];
-  return images[Math.floor(Math.random() * images.length)];
-}
 
 function App() {
-  // getRandomImage()
   const [imageFile, setImageFile] = useState();
   const [isRunning, setIsRunning] = useState(false);
   const [seconds, setSeconds] = useState(0);

@@ -4,19 +4,20 @@ import removeBackground from "@imgly/background-removal";
 import ImageInput from "./ImageInput/ImageInput";
 import ImagePreview from "./ImagePreview/ImagePreview";
 import StartButton from "./StartButton/StartButton";
+import useTimer from "../hooks/useTimer";
 
 const FULL_URL = process.env.PUBLIC_URL || window.location.href.slice(0, -1);
 const MODEL_ASSETS_URL = FULL_URL + "/static/model/";
 
 function BackgroundRemover() {
-  const [isRunning, setIsRunning] = useState(false);
+  const { seconds, isRunning, startTimer, stopTimer } = useTimer();
   const [imageFile, setImageFile] = useState();
   const [caption, setCaption] = useState("");
 
   async function load() {
-    setIsRunning(true);
-    // resetTimer();
     console.log("Removing background of image: " + imageFile);
+    startTimer();
+
     const imageBlob = await removeBackground(imageFile, {
       publicPath: MODEL_ASSETS_URL,
       // debug: true,
@@ -28,9 +29,8 @@ function BackgroundRemover() {
       },
     });
 
+    stopTimer();
     setImageFile(imageBlob);
-    setIsRunning(false);
-    // stopTimer();
   }
 
   return (
@@ -42,7 +42,7 @@ function BackgroundRemover() {
         <StartButton
           onClick={load}
           disabled={isRunning || !imageFile}
-          // seconds={seconds}
+          seconds={seconds}
         />
       </div>
     </>

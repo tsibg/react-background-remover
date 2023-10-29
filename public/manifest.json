@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Background Remover demo",
+  "name": "React Background Remover demo",
   "icons": [
     {
       "src": "favicon.ico",

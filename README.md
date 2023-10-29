@@ -10,7 +10,7 @@ LIVE Preview: https://react-background-remover-seven.vercel.app/
 
 ToDo Notes:
 
-1. Refactor the App Component - extract the processing part to be reusable.
+1.[✓] ~~Refactor the App Component - extract the processing part to be reusable.~~
 2. Cleanup of styles
 
 ## Setup

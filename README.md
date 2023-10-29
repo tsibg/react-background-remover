@@ -17,7 +17,7 @@ ToDo Notes:
 1. Install dependencies. The assets will be automatically copied into `/public/static/model`
 `npm install`
 2. Start dev server
-`npm run start`
+`npm start`
 
 ## Learn More
 

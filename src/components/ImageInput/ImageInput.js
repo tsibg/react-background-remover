@@ -1,5 +1,7 @@
 import React, { useState, useRef } from "react";
-import { ReactComponent as IconPlaceItem } from "../assets/IconPlaceItem.svg";
+import { ReactComponent as IconPlaceItem } from "../../assets/IconPlaceItem.svg";
+import "./ImageInput.css";
+
 function ImageInput({ onChange }) {
     const inputRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);

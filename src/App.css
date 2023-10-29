@@ -40,73 +40,6 @@ main {
   padding: 1rem;
 }
 
-
-.image-preview {
-  padding: 0.5rem;
-}
-.image-preview img {
-  width: 80vw;
-  height: auto;
-  max-width: 100%;
-  max-height: 55vh;
-  object-fit: contain;
-}
-.start {
-  font-size: 1rem;
-  color: var(--text-color-light);
-}
-.start-button {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  max-width: 60vw;
-  margin: 1rem auto;
-  background-color: var(--primary-color);
-  color: var(--text-color);
-  border: none;
-  border-radius: 50px;
-  padding: 0.5rem;
-  font-size: 1.5rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  justify-content: space-between;
-  align-items: center;
-}
-.start-button .button-icon {
-  display: flex;
-}
-.start-button .button-icon svg {
-  fill: var(--text-color);
-} 
-.start-button:disabled .button-icon svg {
-  fill: var(--text-color-light);
-} 
-
-.start-button .button-caption {
-  padding: 0.5rem 0.5rem;
-  width: 2.5rem;
-  line-height: 2.5rem;
-
-  font-size: 1.1rem;
-  background-color: var(--primary-color);
-  border-radius: 50%;
-}
-.start-button:not(:disabled):hover {
-  box-shadow: 0 2px 10px 0 var(--primary-color);
-}
-.start-button:disabled {
-  background-color: transparent;
-  border: 2px solid var(--text-color-light);
-  color: var(--text-color-light);
-}
-
-@media (prefers-reduced-motion: no-preference) {}
-
-
-.App-link {
-  color: var(--primary-color);
-}
-
 svg.icon {
   fill: var(--text-color);
   width: 3rem;
@@ -118,47 +51,6 @@ svg.icon:hover {
   fill: white;
 }
 
-.drop-zone {
-  background-color: rgba(0, 0, 0, 0.1);
-  border: 2px dashed var(--text-color-light);
-  border-radius: 20px;
-  padding: 1rem;
-  color: var(--text-color-light);
-  transition: all 0.3s ease;
-  cursor: pointer;
-  display: flex;
-  height: 40vh;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-}
-
-.drop-zone.selected {
-  border-width: 1px;
-  height: auto;
-  padding: 1rem;
-  gap: 1rem;
-  flex-direction: row;
-}
-
-.drop-zone.selected .icon {
-  fill: var(--text-color-light);
-  width: 2rem;
-  height: 2rem;
-}
-
-.drop-zone:hover {
-  border-color: #fff;
-  color: var(--text-color);
-}
-
-.drop-zone.dragging {
-  border: 2px dashed var(--primary-color);
-  color: rgba(255, 255, 255, 0.9);
-}
-
-
-.drop-zone.dragging .icon {
-  fill: var(--primary-color);
+.App-link {
+  color: var(--primary-color);
 }

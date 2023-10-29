@@ -1,0 +1,10 @@
+.image-preview {
+  padding: 0.5rem;
+}
+.image-preview img {
+  width: 80vw;
+  height: auto;
+  max-width: 100%;
+  max-height: 55vh;
+  object-fit: contain;
+}

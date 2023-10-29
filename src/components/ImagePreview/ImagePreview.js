@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import "./ImagePreview.css";
 function ImagePreview({ fileBlob }) {
     const [imageSrc, setImageSrc] = useState(null);
     useEffect(() => {

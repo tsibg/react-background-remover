@@ -1,28 +1,26 @@
-.start {
-  font-size: 1rem;
-  color: var(--text-color-light);
-}
 .start-button {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+
   width: 100%;
   max-width: 60vw;
   margin: 1rem auto;
+  padding: 0.5rem;
+
   background-color: var(--primary-color);
   color: var(--text-color);
-  border: none;
   border-radius: 50px;
-  padding: 0.5rem;
   font-size: 1.5rem;
   cursor: pointer;
-  transition: all 0.3s ease;
-  justify-content: space-between;
-  align-items: center;
+  transition: border 0.3s ease, background-color 0.3s ease, box-shadow 0.1s ease;
+  border: 2px solid transparent;
 }
 .start-button .button-icon {
   display: flex;
 }
 .start-button .button-icon svg {
+  width: 2.5rem;
   fill: var(--text-color);
 }
 .start-button:disabled .button-icon svg {
@@ -30,10 +28,9 @@
 }
 
 .start-button .button-caption {
-  padding: 0.5rem 0.5rem;
   width: 2.5rem;
+  padding: 0.5rem 0.5rem;
   line-height: 2.5rem;
-
   font-size: 1.1rem;
   background-color: var(--primary-color);
   border-radius: 50%;

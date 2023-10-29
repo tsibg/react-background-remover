@@ -40,6 +40,11 @@ main {
   padding: 1rem;
 }
 
+.caption {
+  color: var(--text-color-light);
+  font-size: 1rem;
+}
+
 svg.icon {
   fill: var(--text-color);
   width: 3rem;

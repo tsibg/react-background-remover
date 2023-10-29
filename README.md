@@ -8,11 +8,6 @@ The static assets for the lib are now served from `/public/static/model` as this
 
 LIVE Preview: https://react-background-remover-seven.vercel.app/
 
-ToDo Notes:
-
-1.[✓] ~~Refactor the App Component - extract the processing part to be reusable.~~
-2. Cleanup of styles
-
 ## Setup
 1. Install dependencies. The assets will be automatically copied into `/public/static/model`
 `npm install`

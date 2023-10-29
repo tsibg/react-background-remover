@@ -1,25 +1,26 @@
 .drop-zone {
-  background-color: rgba(0, 0, 0, 0.1);
-  border: 2px dashed var(--text-color-light);
-  border-radius: 20px;
-  padding: 1rem;
-  color: var(--text-color-light);
-  transition: all 0.3s ease;
-  cursor: pointer;
   display: flex;
   height: 40vh;
+  padding: 1rem;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  color: var(--text-color-light);
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 2px dashed var(--text-color-light);
+  border-radius: 20px;
   transition: all 0.3s ease;
+
+  cursor: pointer;
 }
 
 .drop-zone.selected {
-  border-width: 1px;
   height: auto;
   padding: 1rem;
   gap: 1rem;
   flex-direction: row;
+  border-width: 1px;
 }
 
 .drop-zone.selected .icon {

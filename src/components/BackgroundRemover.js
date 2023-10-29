@@ -12,8 +12,8 @@ const MODEL_ASSETS_URL = FULL_URL + "/static/model/";
 function BackgroundRemover() {
   const { seconds, isRunning, startTimer, stopTimer } = useTimer();
   const [imageFile, setImageFile] = useState();
-  const [caption, setCaption] = useState("");
-
+  const [caption, setCaption] = useState("Upload an image to start!");
+  
   async function load() {
     console.log("Removing background of image: " + imageFile);
     startTimer();
@@ -22,6 +22,7 @@ function BackgroundRemover() {
       publicPath: MODEL_ASSETS_URL,
       // debug: true,
       progress: (key, current, total) => {
+        console.log(`Processing: ${key}: ${current}/${total}`);
         const [type, subtype] = key.split(":");
         setCaption(
           `${type} ${subtype} ${((current / total) * 100).toFixed(0)}%`
@@ -37,14 +38,14 @@ function BackgroundRemover() {
     <>
       <ImageInput onChange={setImageFile} />
       <ImagePreview fileBlob={imageFile} />
-      <div className="start">
-        <p className="caption">{caption}</p>
-        <StartButton
-          onClick={load}
-          disabled={isRunning || !imageFile}
-          seconds={seconds}
-        />
-      </div>
+
+      <p className="caption">{caption}</p>
+      <StartButton
+        onClick={load}
+        disabled={isRunning || !imageFile}
+        seconds={seconds}
+      />
+
     </>
   );
 }

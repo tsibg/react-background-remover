@@ -8,7 +8,8 @@ The static assets for the lib are now served from `/public/static/model` as this
 LIVE Preview: https://react-background-remover-seven.vercel.app/
 
 ## Setup
-1. Install dependencies. 
+1. Install dependencies.
+   
 *The lib's assets will be automatically copied into `/public/static/model`*
 
 `npm install`
@@ -18,7 +19,7 @@ LIVE Preview: https://react-background-remover-seven.vercel.app/
 `npm start`
 
 ### ToDo
-Still looking for better way to serve @imgly/background_remover assets. Currently, the whole module directory is copied in the public dir as the lack of convenient way to make otherwise. 
+Still looking for better way to serve the assets for @imgly/background_remover. Currently, the whole module directory is copied in the public dir as the lack of convenient way to make otherwise. It is made on every install (so deploy doesnt ship the big files) so it should be as bullet-proof solution as ugly solution.
 
 Check https://github.com/imgly/background-removal-js/issues/59 for more info.
 

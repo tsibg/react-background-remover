@@ -18,8 +18,14 @@ LIVE Preview: https://react-background-remover-seven.vercel.app/
 
 `npm start`
 
+4. Deploy
+
+At deploy you can exclude the `/public/static/model` to skip shipping the lib's assets.
+
+Already done in the `.vercelignore` for vercel deployments. Vercel runs the install procedure once deployed and the files are obtained and auto-copied in the needed dirs.
+
 ### ToDo
-Still looking for better way to serve the assets for @imgly/background_remover. Currently, the whole module directory is copied in the public dir as the lack of convenient way to make otherwise. It is made on every install (so deploy doesnt ship the big files) so it should be as bullet-proof solution as ugly solution.
+Still looking for better way to serve the assets for @imgly/background_remover. Currently, the whole module directory is copied in the public dir as the lack of convenient way to make otherwise. It is made on every install so it should be as bullet-proof as ugly solution.
 
 Check https://github.com/imgly/background-removal-js/issues/59 for more info.
 

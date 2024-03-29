@@ -1,6 +1,7 @@
 # Image Background Remover
 
 Removes background of the provided image. Works entirely on the client-side. 
+
 Built with ReactJS (JavaScript) and uses img.ly' background remover library: [@imgly/background_remover](https://github.com/imgly/background-removal-js)
 
 *This project was made to check the implementation library.*

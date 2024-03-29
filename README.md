@@ -1,11 +1,13 @@
-# React Background Remover
+# Image Background Remover
 
-Removes background of the provided image.
+Removes background of the provided image. Works entirely on the client-side. 
+Built with ReactJS (JavaScript) and uses img.ly' background remover library: [@imgly/background_remover](https://github.com/imgly/background-removal-js)
 
-React app for testing the Background Remover library [@imgly/background_remover](https://github.com/imgly/background-removal-js)
+*This project was made to check the implementation library.*
 
-The static assets for the lib are now served from `/public/static/model` as this may improve loading time.
-LIVE Preview: https://react-background-remover-seven.vercel.app/
+NOTE: The static assets for the lib are now served from `/public/static/model` as this may improve loading time.
+
+# [LIVE Preview](https://react-background-remover-seven.vercel.app/)
 
 ## Setup
 1. Install dependencies.
